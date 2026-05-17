@@ -1,3 +1,52 @@
+// ----------------------------- Disjoint Set Union (DSU) -----------------------------
+class DSU {
+public:
+    vll parent, size;
+    ll components; // Tracks the total number of disconnected components
+
+    // Constructor: 1-indexed by default (size n+1 covers both 0 and 1 indexing)
+    DSU(ll n) {
+        parent.resize(n + 1);
+        size.assign(n + 1, 1);
+        components = n;
+        iota(all(parent), 0); // Initializes parent[i] = i
+    }
+
+    // Find with Path Compression: O(alpha(N)) ~ O(1)
+    ll find(ll x) {
+        if (parent[x] == x) return x;
+        return parent[x] = find(parent[x]); 
+    }
+
+    // Union by Size: O(alpha(N)) ~ O(1)
+    bool union_sets(ll x, ll y) {
+        ll rootX = find(x);
+        ll rootY = find(y);
+        
+        if (rootX == rootY) return false; // Cycle detected / Already connected
+
+        // Always attach the smaller tree to the root of the larger tree
+        if (size[rootX] < size[rootY]) swap(rootX, rootY);
+        
+        parent[rootY] = rootX;
+        size[rootX] += size[rootY];
+        components--; // Merging two components reduces total count by 1
+        
+        return true; // Successfully connected
+    }
+
+    // Returns true if x and y belong to the same component
+    bool is_connected(ll x, ll y) {
+        return find(x) == find(y);
+    }
+
+    // Returns the size of the component containing node x
+    ll get_size(ll x) {
+        return size[find(x)];
+    }
+};
+// ====================================================================================
+
 // ----------------------------- Kruskal's MST Engine -----------------------------
 
 // Explicit structure representing a single weighted graph edge
