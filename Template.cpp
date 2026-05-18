@@ -18,6 +18,8 @@ using vpll = vector<pll>;
 #define sz(x) ((ll)(x).size())
 #define fr(i, a, b) for (ll i = (a); i < (b); ++i)
 #define rf(i, a, b) for (ll i = (a); i >= (b); --i)
+#define red(i, a, b) for (ll i = (a); i < (b); ++i)
+#define rev(i, a, b) for (ll i = (a); i >= (b); --i)
 
 const ll MOD = 1e9 + 7;
 const ll INF = 2e18;
