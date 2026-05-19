@@ -22,6 +22,8 @@ using vpll = vector<pll>;
 
 #define fr(i,a,b)   for (ll i = (a); i < (b); ++i)
 #define rf(i,a,b)   for (ll i = (a); i >= (b); --i)
+#define rep(i,a,b)   for (ll i = (a); i < (b); ++i)
+#define rev(i,a,b)   for (ll i = (a); i >= (b); --i)
 #define each(x, a)  for (auto& x : a)
 
 // ----------------------------- Constants -----------------------------
