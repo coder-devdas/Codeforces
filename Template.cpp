@@ -96,8 +96,25 @@ void fastio() {
 // ----------------------------- Solve -----------------------------
 void solve() {
 
+/*
+Question Simplified
 
-    
+*/
+
+/*
+Initial Thoughts
+
+*/
+
+/*
+Algo
+
+*/
+
+/*
+How to implement
+
+*/
 }
 
 // ----------------------------- Main -----------------------------
